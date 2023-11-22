@@ -22,7 +22,7 @@ public class Automobile {
 		System.out.println("velocita: "+velocita);
 		System.out.println("Carburante: "+carburante);
 		System.out.println("consumo Medio: "+consumoMedio);
-		System.out.println("KM percorsi"+kmPercorsi);
+		System.out.println("KM percorsi: "+kmPercorsi);
 	}
 	
 	public void aggiorna()
@@ -31,8 +31,8 @@ public class Automobile {
 		System.out.println("velocita: "+velocita);
 		System.out.println("Carburante: "+carburante);
 		System.out.println("consumo Medio: "+consumoMedio);
-		System.out.println("KM percorsi"+kmPercorsi);
-		
+		System.out.println("KM percorsi: "+kmPercorsi);
+		//aggiornare valori
 	}
 	
 }
