@@ -14,23 +14,19 @@ public class Main {
 	a1.carburante=30;
 	a1.consumoMedio=20;	//km/l
 	a1.totKmPercorsi=0;
-	System.out.println("Automobile 1");
-	a1.mostraDati();
 	
 	a2.velocita=0;
 	a2.carburante=50;
 	a2.consumoMedio=23;	//km/l
 	a2.totKmPercorsi=0;
-	System.out.println("\nAutomobile 2");
-	a2.mostraDati();
 	
 	String risposta;
 	
 	do {	
-		System.out.println("Auto 1:");
+		System.out.println("\nAuto 1:");
 		a1.mostraDati();
 		
-		System.out.println("Auto 2:");
+		System.out.println("\nAuto 2:");
 		a2.mostraDati();
 		
 		System.out.println("\nChe auto vuoi guidare(1/2)?");
@@ -44,6 +40,7 @@ public class Main {
 			System.out.println("Auto non disponibile");
 		
 		System.out.println("\nVuoi accellerare o decellerare?");
+		risposta=sc.nextLine();
 		if(risposta.equals("accellerare"))
 			autoCorrente.accellera();
 		else if(risposta.equals("decellerare"))
@@ -57,6 +54,8 @@ public class Main {
 		System.out.println("\nAuto 2:");
 		a2.aggiorna();
 		
+		System.out.println("\nVuoi guidare ancora(si/no)?");
+		risposta=sc.nextLine();
 	}
 	while(risposta.equals("si"));
 	
