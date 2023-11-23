@@ -24,7 +24,8 @@ public class Main {
 	a2.mostraDati();
 	int autoScelta;
 	String risposta;
-	
+
+do {	
 	System.out.println("\nChe auto vuoi guidare(1/2)?");
 	autoScelta=Integer.parseInt(sc.nextLine());
 	
@@ -46,7 +47,7 @@ public class Main {
 			break;
 		}
 	}
-	else if(autoScelta!=2)
+	else if(autoScelta==2)
 	{
 		System.out.println("\nCosa vuoi fare (accellerare/decellerare)?");
 		risposta=sc.nextLine();
@@ -62,12 +63,15 @@ public class Main {
 	}
 
 	System.out.println("\nAutomobile 1");
-	a1.mostraDati();
+	a1.aggiorna();
 	
 	System.out.println("\nAutomobile 2");
-	a2.mostraDati();
+	a2.aggiorna();
 	
-	
+	System.out.println("Vuoi guidare ancora(si/no)?");
+	risposta=sc.nextLine();
+}
+while(risposta.equals("si"));
 	
 	
 	}

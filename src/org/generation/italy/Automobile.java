@@ -13,26 +13,25 @@ public class Automobile {
 	
 	public void decellera()
 	{
-		if(velocita>0)
+		if(velocita>=10)
 			velocita-=10;
 	}
 	
 	public void mostraDati()
 	{
-		System.out.println("velocita: "+velocita);
-		System.out.println("Carburante: "+carburante);
-		System.out.println("consumo Medio: "+consumoMedio);
-		System.out.println("KM percorsi: "+kmPercorsi);
+		System.out.println("Velocita:       "+velocita+ " km/h");
+		System.out.println("Carburante:     "+carburante+" litri");
+		System.out.println("Consumo Medio:  "+consumoMedio+" km/l");
+		System.out.println("KM percorsi:    "+kmPercorsi+" km");
 	}
 	
 	public void aggiorna()
 	{
+		carburante=carburante-kmPercorsi/consumoMedio;
 		kmPercorsi+=velocita;
-		System.out.println("velocita: "+velocita);
-		System.out.println("Carburante: "+carburante);
-		System.out.println("consumo Medio: "+consumoMedio);
-		System.out.println("KM percorsi: "+kmPercorsi);
-		//aggiornare valori
+		System.out.println("Velocita:       "+velocita + " km/h");
+		System.out.println("Carburante:     "+carburante + " litri");
+		System.out.println("Consumo Medio:  "+consumoMedio+ " km/l");
+		System.out.println("KM percorsi:    "+kmPercorsi+ " km");
 	}
-	
 }
