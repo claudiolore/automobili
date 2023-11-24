@@ -7,8 +7,10 @@ public class Automobile {
 	
 	public void accellera()
 	{
-		if(velocita<=190)
+		if(velocita<=190 && carburante>0)
 			velocita+=10;
+		else
+			System.out.println("Carburante finito");
 	}
 	
 	public void decellera()
@@ -22,7 +24,9 @@ public class Automobile {
 		System.out.println("Velocita:       "+velocita+ " km/h");
 		System.out.println("Carburante:     "+carburante+" litri");
 		System.out.println("Consumo Medio:  "+consumoMedio+" km/l");
-		System.out.println("KM percorsi:    "+totKmPercorsi+" km");
+		System.out.print("KM percorsi:   ");
+		for(int i=0;i<totKmPercorsi;i++)
+			System.out.print("-");
 	}
 	
 	public void aggiorna()
@@ -30,9 +34,7 @@ public class Automobile {
 		int kmPercorsi1h=velocita;
 		carburante=carburante-velocita/consumoMedio;
 		totKmPercorsi+=velocita;
-		System.out.println("Velocita:       "+velocita + " km/h");
-		System.out.println("Carburante:     "+carburante + " litri");
-		System.out.println("Consumo Medio:  "+consumoMedio+ " km/l");
-		System.out.println("KM percorsi:    "+totKmPercorsi+ " km");
+		if(carburante<=0)
+			velocita=0;
 	}
 }

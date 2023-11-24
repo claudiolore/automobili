@@ -38,20 +38,23 @@ public class Main {
 			autoCorrente=a2;
 		else if(!risposta.equals("1") && !risposta.equals("2")) 
 			System.out.println("Auto non disponibile");
-		
-		System.out.println("\nVuoi accellerare o decellerare?");
-		risposta=sc.nextLine();
-		if(risposta.equals("accellerare"))
-			autoCorrente.accellera();
-		else if(risposta.equals("decellerare"))
-			autoCorrente.decellera();
-		else if(!risposta.equals("acccellerare") && !risposta.equals("decellerare"))
-			System.out.println("Azione non disponibile");
-		
-		System.out.println("\nAuto 1:");
+		else if(risposta.equals("nessuna"));
+		else
+			System.out.println("risposta non valida");
+			
+		if(risposta.equals("1")||risposta.equals("2"))
+		{	
+			System.out.println("\nVuoi accellerare o decellerare?");
+			risposta=sc.nextLine();
+			if(risposta.equals("accellerare"))
+				autoCorrente.accellera();
+			else if(risposta.equals("decellerare"))
+				autoCorrente.decellera();
+			else if(!risposta.equals("acccellerare") && !risposta.equals("decellerare"))
+				System.out.println("Azione non disponibile");
+
+		}
 		a1.aggiorna();
-		
-		System.out.println("\nAuto 2:");
 		a2.aggiorna();
 		
 		System.out.println("\nVuoi guidare ancora(si/no)?");
