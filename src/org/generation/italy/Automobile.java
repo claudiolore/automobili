@@ -2,10 +2,26 @@ package org.generation.italy;
 
 public class Automobile {
 
-	int velocita;
-	float carburante, consumoMedio,totKmPercorsi;
+	private int velocita;
+	private float carburante, consumoMedio,totKmPercorsi;
 	
-	public void accellera()
+	public Automobile (float consumoMedio, float carburante) {
+		
+		this.consumoMedio=consumoMedio;
+		velocita=0;
+		totKmPercorsi=0;
+		
+		if(carburante>0)
+			this.carburante=carburante;
+		else
+		{
+			System.out.println("errore");
+			carburante=0;
+		}
+			
+	}
+	
+	public void accelera()
 	{
 		if(velocita<=190 && carburante>0)
 			velocita+=10;
@@ -13,7 +29,7 @@ public class Automobile {
 			System.out.println("Carburante finito");
 	}
 	
-	public void decellera()
+	public void decelera()
 	{
 		if(velocita>=10)
 			velocita-=10;
@@ -21,7 +37,7 @@ public class Automobile {
 	
 	public void mostraDati()
 	{
-		System.out.println("Velocita:       "+velocita+ " km/h");
+		System.out.println("Velocita:       "+velocita+" km/h");
 		System.out.println("Carburante:     "+carburante+" litri");
 		System.out.println("Consumo Medio:  "+consumoMedio+" km/l");
 		System.out.print("KM percorsi:   ");
@@ -32,7 +48,7 @@ public class Automobile {
 	public void aggiorna()
 	{
 		int kmPercorsi1h=velocita;
-		carburante=carburante-velocita/consumoMedio;
+		carburante=carburante-kmPercorsi1h/consumoMedio;
 		totKmPercorsi+=velocita;
 		if(carburante<=0)
 			velocita=0;

@@ -6,11 +6,13 @@ public class Main {
 
 	public static void main(String[] args) {
 	
-	Automobile a1=new Automobile();
-	Automobile a2=new Automobile();
+	Automobile a1=new Automobile(-30,20);
+	Automobile a2=new Automobile(50,23);
 	Automobile autoCorrente=a1;
 	Scanner sc=new Scanner(System.in);
-	a1.velocita=0;
+	
+	
+/*	a1.velocita=0;
 	a1.carburante=30;
 	a1.consumoMedio=20;	//km/l
 	a1.totKmPercorsi=0;
@@ -18,7 +20,7 @@ public class Main {
 	a2.velocita=0;
 	a2.carburante=50;
 	a2.consumoMedio=23;	//km/l
-	a2.totKmPercorsi=0;
+	a2.totKmPercorsi=0;				*///non si puo piu fare poiche private
 	
 	String risposta;
 	
@@ -44,13 +46,13 @@ public class Main {
 			
 		if(risposta.equals("1")||risposta.equals("2"))
 		{	
-			System.out.println("\nVuoi accellerare o decellerare?");
+			System.out.println("\nVuoi accelerare o decelerare?");
 			risposta=sc.nextLine();
-			if(risposta.equals("accellerare"))
-				autoCorrente.accellera();
-			else if(risposta.equals("decellerare"))
-				autoCorrente.decellera();
-			else if(!risposta.equals("acccellerare") && !risposta.equals("decellerare"))
+			if(risposta.equals("accelerare"))
+				autoCorrente.accelera();
+			else if(risposta.equals("decelerare"))
+				autoCorrente.decelera();
+			else if(!risposta.equals("accelerare") && !risposta.equals("decelerare"))
 				System.out.println("Azione non disponibile");
 
 		}
